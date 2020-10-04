@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "clusterName": {
+            "value": "_REQUIRED_"
+        },
+        "dnsPrefix": {
+            "value": "_REQUIRED_"
+        },
+        "osDiskSizeGB": {
+            "value": 80
+        },
+        "dnsServiceIP": {
+            "value": "10.0.0.10"
+        },
+        "serviceCidr": {
+            "value": "10.0.0.0/16"
+        },
+        "dockerBridgeCidr": {
+            "value": "172.17.0.1/16"
+        },
+        "agentCount": {
+            "value": 2
+        },
+        "agentVMSize": {
+            "value": "_REQUIRED_"
+        },
+        "vnetSubnetID": {
+            "value": "_REQUIRED_"
+        },
+        "servicePrincipalClientId": {
+            "value": "_REQUIRED_"
+        },
+        "servicePrincipalClientSecret": {
+            "value": "_REQUIRED_"
+        }
+    }
+}
