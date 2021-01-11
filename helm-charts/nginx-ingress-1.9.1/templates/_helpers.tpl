@@ -69,3 +69,15 @@ Expand app name.
 {{- define "nginx-ingress.appName" -}}
 {{- default (include "nginx-ingress.name" .) .Values.controller.name -}}
 {{- end -}}
+
+{{/*
+Tcp ports
+*/}}
+{{- define "nginx-ingress.tcpPorts" -}}
+{{- range $rule := .Values.tcpLoadBalancingRules.rules }}
+- name: {{ $rule.name }}
+  port: {{ $rule.port }}
+  targetPort: {{ $rule.port }}
+  protocol: TCP
+{{- end -}} 
+{{- end -}}

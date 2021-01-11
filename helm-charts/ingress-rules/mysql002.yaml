@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: mysql002-ingress
 spec:
-  ingressClassName: nginx2
+  ingressClassName: nginx
   rules:
   - host: mysql002.cyranno.local    
     http:
@@ -11,4 +11,4 @@ spec:
         - path: /
           backend:
             serviceName: mysql002
-            servicePort: 3308   
+            servicePort: 3309   

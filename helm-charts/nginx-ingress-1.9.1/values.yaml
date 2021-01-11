@@ -241,17 +241,7 @@ controller:
 
       ## The HTTPS port on the POD where the Ingress controller service is running.
       targetPort: 443
-
-    ## A list of custom ports to expose through the Ingress controller service. Follows the conventional Kubernetes yaml syntax for service ports.
-    customPorts:
-    - name: mysql001
-      port: 3308      
-      targetPort: 3308
-      protocol: TCP
-    - name: mysql002
-      port: 3309      
-      targetPort: 3309
-      protocol: TCP        
+         
 
   serviceAccount:
     ## The name of the service account of the Ingress controller pods. Used for RBAC.
@@ -318,7 +308,9 @@ prometheus:
 
 tcpLoadBalancingRules:
   rules:
-  - serviceName: "mysql001.mysql001.svc.cluster.local"
+  - name: "mysql001"
+    serviceName: "mysql001.mysql001.svc.cluster.local"
     port: 3308
-  - serviceName: "mysql002.mysql002.svc.cluster.local"
+  - name: "mysql002"
+    serviceName: "mysql002.mysql002.svc.cluster.local"
     port: 3309
