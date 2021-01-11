@@ -1,6 +1,13 @@
 
-$SubscriptionName = "Pay-As-You-Go"
-$Location = "Canada East"
+param(
+    [Parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    [String] $SubscriptionName,
+    [Parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    [String] $Location
+)
+
 $Date = Get-Date -Format "ddMMyyyyHHmm"
 $ResourceGroupName = "RG-AKS-" + $Date
 $VirtualNetworkName = "VN-AKS-" + $Date
@@ -52,9 +59,10 @@ New-AzResourceGroupDeployment `
     -TemplateParameterFile ../templates/aks-parameters.json `
     -clusterName $ClusterName `
     -dnsPrefix $ClusterName `
-    -agentVMSize Standard_DS2_v2 `
     -vnetSubnetID $VnetSubnetID `
     -servicePrincipalClientId $SecureId `
-    -servicePrincipalClientSecret $SecureSecret
+    -servicePrincipalClientSecret $SecureSecret `
+    -enablePrivateCluster $false `
+    -clusterLoadBalancerSku "basic"
 
 Write-Host "Deployment is done"    

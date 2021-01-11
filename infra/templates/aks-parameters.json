@@ -24,7 +24,7 @@
             "value": 2
         },
         "agentVMSize": {
-            "value": "_REQUIRED_"
+            "value": "Standard_DS2_v2"
         },
         "vnetSubnetID": {
             "value": "_REQUIRED_"
@@ -34,6 +34,15 @@
         },
         "servicePrincipalClientSecret": {
             "value": "_REQUIRED_"
+        },
+        "enablePrivateCluster": {
+            "value": "_REQUIRED_"
+        },
+        "clusterLoadBalancerSku": {
+            "value": "_REQUIRED_"
+        },
+        "kubernetesVersion": {
+            "value": "1.19.3"
         }
     }
 }

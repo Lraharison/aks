@@ -1,0 +1,4 @@
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install mysql001 bitnami/mysql  -f values1.yaml -n mysql001
+helm install mysql002 bitnami/mysql  -f values2.yaml -n mysql002

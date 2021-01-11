@@ -1,0 +1,14 @@
+architecture: "standalone"
+auth:
+  database: mydatabase2
+  username: cyranno
+  password: qwerty1
+  rootPassword: qwerty1
+  
+image:
+  repository: bitnami/mysql
+  tag: 8.0.22-debian-10-r44
+  
+primary:
+  service:
+    port: 3309

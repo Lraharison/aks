@@ -1,1 +1,1 @@
-# Deploy AKS
+# Exposing mysql service outside the cluster with nginx ingress controller

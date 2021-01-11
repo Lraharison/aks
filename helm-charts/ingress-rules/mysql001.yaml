@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mysql001-ingress
+spec:
+  ingressClassName: nginx 
+  rules:
+  - host: mysql001.cyranno.local    
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: mysql001
+            servicePort: 3308       
