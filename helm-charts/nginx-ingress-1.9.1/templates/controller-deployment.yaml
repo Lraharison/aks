@@ -95,6 +95,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
+        - name: TZ
+          value: America/Montreal
         args:
           - -nginx-plus={{ .Values.controller.nginxplus }}
           - -nginx-reload-timeout={{ .Values.controller.nginxReloadTimeout }}
