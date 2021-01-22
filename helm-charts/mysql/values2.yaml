@@ -11,4 +11,4 @@ image:
   
 primary:
   service:
-    port: 3309
+    port: 3306

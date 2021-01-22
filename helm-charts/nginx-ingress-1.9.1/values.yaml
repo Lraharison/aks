@@ -311,8 +311,10 @@ tcpLoadBalancingRules:
   - name: "mysql001"
     serviceName: "mysql001.mysql001.svc.cluster.local"
     port: 3308
+    servicePort: 3306
   - name: "mysql002"
     serviceName: "mysql002.mysql002.svc.cluster.local"
     port: 3309
+    servicePort: 3306
 
   

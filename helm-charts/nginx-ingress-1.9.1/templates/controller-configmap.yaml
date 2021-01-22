@@ -14,7 +14,7 @@ data:
   stream-snippets: | 
     {{- range $rule := .Values.tcpLoadBalancingRules.rules }}
             upstream {{ $rule.serviceName }}-tcp { 
-              server {{ $rule.serviceName }}:{{ $rule.port }};
+              server {{ $rule.serviceName }}:{{ $rule.servicePort }};
             }
             server {
               listen {{ $rule.port }};
